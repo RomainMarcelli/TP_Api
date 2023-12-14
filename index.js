@@ -6,7 +6,7 @@ const port = 3000;
 const mongoose = require("mongoose");
 require('dotenv').config();
 
-mongoose.connect('mongodb://127.0.0.1:27017/apinode');
+mongoose.connect('mongodb://127.0.0.1:27017/Tp_Api');
 
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
