@@ -1,14 +1,16 @@
 // middlewares/jwtMiddleware.js
 
-
 const jwt = require('jsonwebtoken');
 require('dotenv').config();
 
+// Middleware pour vérifier le token JWT
 exports.verifyToken = async function (req, res, next) {
     try {
         let token = req.headers['authorization'];
+
         if (token !== undefined) {
-            const playload = await new Promise((resolve, reject) => {
+            // Vérification asynchrone du token
+            const payload = await new Promise((resolve, reject) => {
                 jwt.verify(token, process.env.JWT_KEY, (error, decoded) => {
                     if (error) {
                         reject(error);
@@ -18,13 +20,16 @@ exports.verifyToken = async function (req, res, next) {
                 });
             });
 
-            req.user = playload;
+            // Ajout du payload décodé à la requête
+            req.user = payload;
             next();
         } else {
-            res.status(403).json({ message: "Accès interdit: token manquant" });
+            // Token manquant, accès interdit
+            res.status(403).json({ message: "Accès interdit : token manquant" });
         }
     } catch (error) {
-        console.log(error);
-        res.status(403).json({ message: "Accès interdit: token invalid" });
+        console.error(error);
+        // Token invalide, accès interdit
+        res.status(403).json({ message: "Accès interdit : token invalide" });
     }
 };
