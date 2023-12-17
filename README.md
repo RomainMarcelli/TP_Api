@@ -25,22 +25,20 @@ Secret Santa est une application permettant d'organiser des échanges de cadeaux
 
 ## Installation
 
-1. Initier le projet : `git init`
-2. Clônez ce dépôt : `git clone https://github.com/RomainMarcelli/Tp_Api.git`
-3. Accédez au répertoire du projet : `cd TP_Api`
-4. Installez les dépendances : `npm install, npm install express --save,  npm i dotenv --save, npm install bcrypt, npm install mongoose --save,  npm i dotenv --save,  npm i jsonwebtoken, npm install validator `
-
+1. Clônez ce dépôt : `git clone https://github.com/RomainMarcelli/Tp_Api.git`
+2. Accédez au répertoire du projet : `cd TP_Api`
+3. Installez les dépendances : `npm install express dotenv bcrypt mongoose jsonwebtoken validator`
 
 ## Utilisation
 
 1. Démarrez le serveur : `npm start`
 2. Accédez à l'application dans votre navigateur : `http://localhost:3000`
+3. Utilisez Postman ou un outil similaire pour tester les différentes routes de l'API.
 
 ## Contribuer
 
 Nous sommes ouverts aux contributions ! Si vous souhaitez contribuer à ce projet, veuillez suivre les étapes suivantes :
 1. Fork du projet.
-2. Création d'une nouvelle branche : `git branch -m 'dev'`
 2. Création d'une nouvelle branche : `git branch -m 'user'`
 3. Commit des modifications : `git commit -m 'Ajout des fonctions user'`
 4. Push vers la branche : `git push origin ... `
